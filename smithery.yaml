@@ -1,0 +1,10 @@
+name: crm-ai-mcp
+description: "MEOK AI Labs — Customer relationship management toolkit for AI agents: lead scoring,"
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/crm-ai-mcp
+license: MIT
+categories: [Sales, CRM]
+tags: [crm, customer-relationship, sales-pipeline, lead-management, customer-data]
+runtime: python
+entrypoint: server.py
