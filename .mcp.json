@@ -1,24 +1,148 @@
 {
   "name": "crm-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Customer relationship management toolkit for AI agents: lead scoring,",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/crm-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "**By MEOK AI Labs** | [meok.ai](https://meok.ai)",
+  "version": "1.0.0",
   "tools": [
-    "lead_scorer",
-    "deal_stage_predictor",
-    "followup_scheduler",
-    "customer_health_score",
-    "churn_predictor"
-  ],
-  "categories": [
-    "Sales",
-    "CRM"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "lead_scorer",
+      "description": "Score a sales lead (0-100) based on firmographic data, engagement signals,",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "company_size": {
+            "type": "integer"
+          },
+          "industry": {
+            "type": "string"
+          },
+          "budget": {
+            "type": "number"
+          },
+          "engagement_signals": {
+            "type": "object"
+          },
+          "source": {
+            "type": "string"
+          },
+          "days_since_first_touch": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "company_size",
+          "industry"
+        ]
+      }
+    },
+    {
+      "name": "deal_stage_predictor",
+      "description": "Predict deal win probability and estimated close date based on",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "deal_value": {
+            "type": "number"
+          },
+          "days_in_pipeline": {
+            "type": "integer"
+          },
+          "current_stage": {
+            "type": "string"
+          },
+          "activities_count": {
+            "type": "integer"
+          },
+          "competitor_mentioned": {
+            "type": "boolean"
+          },
+          "champion_identified": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "deal_value"
+        ]
+      }
+    },
+    {
+      "name": "followup_scheduler",
+      "description": "Schedule follow-ups for a list of contacts based on priority,",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "contacts": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "strategy": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "contacts"
+        ]
+      }
+    },
+    {
+      "name": "customer_health_score",
+      "description": "Calculate a customer health score (0-100) from usage, support, NPS,",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "usage_metrics": {
+            "type": "object"
+          },
+          "support_tickets": {
+            "type": "integer"
+          },
+          "nps_score": {
+            "type": "integer"
+          },
+          "contract_value": {
+            "type": "number"
+          },
+          "months_as_customer": {
+            "type": "integer"
+          },
+          "feature_adoption_pct": {
+            "type": "number"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "churn_predictor",
+      "description": "Predict churn probability and recommend a retention playbook based on",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "months_as_customer": {
+            "type": "integer"
+          },
+          "monthly_usage_trend": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "support_tickets_last_90d": {
+            "type": "integer"
+          },
+          "nps_score": {
+            "type": "integer"
+          },
+          "contract_renewal_days": {
+            "type": "integer"
+          },
+          "competitor_mentions": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      }
+    }
+  ]
 }

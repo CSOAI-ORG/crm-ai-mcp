@@ -1,10 +1,98 @@
 name: crm-ai-mcp
-description: "MEOK AI Labs — Customer relationship management toolkit for AI agents: lead scoring,"
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/crm-ai-mcp
-license: MIT
-categories: [Sales, CRM]
-tags: [crm, customer-relationship, sales-pipeline, lead-management, customer-data]
-runtime: python
-entrypoint: server.py
+description: '**By MEOK AI Labs** | [meok.ai](https://meok.ai)'
+version: 1.0.0
+tools:
+- name: lead_scorer
+  description: Score a sales lead (0-100) based on firmographic data, engagement signals,
+  parameters:
+  - name: company_size
+    type: integer
+    required: true
+  - name: industry
+    type: string
+    required: true
+  - name: budget
+    type: number
+    required: false
+  - name: engagement_signals
+    type: object
+    required: false
+  - name: source
+    type: string
+    required: false
+  - name: days_since_first_touch
+    type: integer
+    required: false
+- name: deal_stage_predictor
+  description: Predict deal win probability and estimated close date based on
+  parameters:
+  - name: deal_value
+    type: number
+    required: true
+  - name: days_in_pipeline
+    type: integer
+    required: false
+  - name: current_stage
+    type: string
+    required: false
+  - name: activities_count
+    type: integer
+    required: false
+  - name: competitor_mentioned
+    type: boolean
+    required: false
+  - name: champion_identified
+    type: boolean
+    required: false
+- name: followup_scheduler
+  description: Schedule follow-ups for a list of contacts based on priority,
+  parameters:
+  - name: contacts
+    type: array
+    required: true
+  - name: strategy
+    type: string
+    required: false
+- name: customer_health_score
+  description: Calculate a customer health score (0-100) from usage, support, NPS,
+  parameters:
+  - name: usage_metrics
+    type: object
+    required: false
+  - name: support_tickets
+    type: integer
+    required: false
+  - name: nps_score
+    type: integer
+    required: false
+  - name: contract_value
+    type: number
+    required: false
+  - name: months_as_customer
+    type: integer
+    required: false
+  - name: feature_adoption_pct
+    type: number
+    required: false
+- name: churn_predictor
+  description: Predict churn probability and recommend a retention playbook based
+    on
+  parameters:
+  - name: months_as_customer
+    type: integer
+    required: false
+  - name: monthly_usage_trend
+    type: array
+    required: false
+  - name: support_tickets_last_90d
+    type: integer
+    required: false
+  - name: nps_score
+    type: integer
+    required: false
+  - name: contract_renewal_days
+    type: integer
+    required: false
+  - name: competitor_mentions
+    type: integer
+    required: false

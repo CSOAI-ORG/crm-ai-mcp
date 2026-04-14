@@ -12,6 +12,11 @@ Install: pip install mcp
 Run:     python server.py
 """
 
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import math
 from collections import defaultdict
 from datetime import datetime, timedelta
@@ -527,7 +532,7 @@ mcp = FastMCP(
 @mcp.tool()
 def lead_scorer(company_size: int, industry: str, budget: float = 0,
                 engagement_signals: dict = {}, source: str = "organic_search",
-                days_since_first_touch: int = 7) -> dict:
+                days_since_first_touch: int = 7, api_key: str = "") -> dict:
     """Score a sales lead (0-100) based on firmographic data, engagement signals,
     and source quality. Returns tier, recommended action, and score breakdown.
 
@@ -539,6 +544,10 @@ def lead_scorer(company_size: int, industry: str, budget: float = 0,
         source: Lead source (referral, organic_search, paid_search, linkedin, etc.)
         days_since_first_touch: Days since first interaction
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -553,7 +562,7 @@ def deal_stage_predictor(deal_value: float, days_in_pipeline: int = 0,
                          current_stage: str = "qualification",
                          activities_count: int = 0,
                          competitor_mentioned: bool = False,
-                         champion_identified: bool = False) -> dict:
+                         champion_identified: bool = False, api_key: str = "") -> dict:
     """Predict deal win probability and estimated close date based on
     pipeline stage, velocity, and deal characteristics.
 
@@ -565,6 +574,10 @@ def deal_stage_predictor(deal_value: float, days_in_pipeline: int = 0,
         competitor_mentioned: Whether a competitor has been mentioned
         champion_identified: Whether an internal champion has been identified
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -575,7 +588,7 @@ def deal_stage_predictor(deal_value: float, days_in_pipeline: int = 0,
 
 
 @mcp.tool()
-def followup_scheduler(contacts: list[dict], strategy: str = "standard") -> dict:
+def followup_scheduler(contacts: list[dict], strategy: str = "standard", api_key: str = "") -> dict:
     """Schedule follow-ups for a list of contacts based on priority,
     last contact date, and engagement strategy.
 
@@ -583,6 +596,10 @@ def followup_scheduler(contacts: list[dict], strategy: str = "standard") -> dict
         contacts: List as [{"name": "X", "email": "x@y.com", "last_contact_date": "2026-01-01", "priority": "high", "deal_value": 50000}]
         strategy: Follow-up cadence (aggressive, standard, nurture, reactivation)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -596,7 +613,7 @@ def followup_scheduler(contacts: list[dict], strategy: str = "standard") -> dict
 def customer_health_score(usage_metrics: dict = {}, support_tickets: int = 0,
                           nps_score: int = 8, contract_value: float = 0,
                           months_as_customer: int = 12,
-                          feature_adoption_pct: float = 50.0) -> dict:
+                          feature_adoption_pct: float = 50.0, api_key: str = "") -> dict:
     """Calculate a customer health score (0-100) from usage, support, NPS,
     adoption, and tenure signals.
 
@@ -608,6 +625,10 @@ def customer_health_score(usage_metrics: dict = {}, support_tickets: int = 0,
         months_as_customer: Customer tenure in months
         feature_adoption_pct: Percentage of features adopted (0-100)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -623,7 +644,7 @@ def churn_predictor(months_as_customer: int = 12,
                     support_tickets_last_90d: int = 0,
                     nps_score: int = 8,
                     contract_renewal_days: int = 180,
-                    competitor_mentions: int = 0) -> dict:
+                    competitor_mentions: int = 0, api_key: str = "") -> dict:
     """Predict churn probability and recommend a retention playbook based on
     usage trends, support patterns, and contract timeline.
 
@@ -635,6 +656,10 @@ def churn_predictor(months_as_customer: int = 12,
         contract_renewal_days: Days until contract renewal
         competitor_mentions: Times competitor was mentioned in interactions
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
