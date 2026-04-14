@@ -521,8 +521,7 @@ def _churn_predictor(months_as_customer: int, monthly_usage_trend: list[float],
 # ---------------------------------------------------------------------------
 mcp = FastMCP(
     "CRM AI MCP",
-    instructions="Customer relationship management toolkit: lead scoring, deal stage prediction, follow-up scheduling, customer health scoring, and churn prediction. By MEOK AI Labs.",
-)
+    instructions="Customer relationship management toolkit: lead scoring, deal stage prediction, follow-up scheduling, customer health scoring, and churn prediction. By MEOK AI Labs.")
 
 
 @mcp.tool()
