@@ -1,5 +1,6 @@
 name: crm-ai-mcp
-description: '**By MEOK AI Labs** | [meok.ai](https://meok.ai)'
+description: 'Customer relationship management toolkit: lead scoring, deal stage prediction,
+  follow-up scheduling,'
 version: 1.0.0
 tools:
 - name: lead_scorer
@@ -82,7 +83,7 @@ tools:
     type: integer
     required: false
   - name: monthly_usage_trend
-    type: array
+    type: number
     required: false
   - name: support_tickets_last_90d
     type: integer
