@@ -1,0 +1,58 @@
+{
+  "name": "CRM AI MCP",
+  "description": "Customer relationship management toolkit: lead scoring, deal stage prediction, follow-up scheduling, customer health scoring, and churn prediction. By MEOK AI Labs.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/crm-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "lead_scorer",
+      "description": "Score a sales lead (0-100) based on firmographic data, engagement signals,"
+    },
+    {
+      "name": "deal_stage_predictor",
+      "description": "Predict deal win probability and estimated close date based on"
+    },
+    {
+      "name": "followup_scheduler",
+      "description": "Schedule follow-ups for a list of contacts based on priority,"
+    },
+    {
+      "name": "customer_health_score",
+      "description": "Calculate a customer health score (0-100) from usage, support, NPS,"
+    },
+    {
+      "name": "churn_predictor",
+      "description": "Predict churn probability and recommend a retention playbook based on"
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Healthcare & Life Sciences",
+    "Marketing & SEO"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
