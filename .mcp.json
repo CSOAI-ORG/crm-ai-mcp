@@ -1,6 +1,6 @@
 {
   "name": "crm-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Customer relationship management toolkit: lead scoring, deal stage prediction, follow-up scheduling,",
+  "description": "Crm Ai MCP server. Tools: lead scorer, deal stage predictor, followup scheduler. Built by MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
