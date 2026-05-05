@@ -1,53 +1,38 @@
-# CRM AI MCP Server
-**By MEOK AI Labs** | [meok.ai](https://meok.ai)
+<div align="center">
 
-Customer relationship management toolkit: lead scoring, deal stage prediction, follow-up scheduling, customer health scoring, and churn prediction.
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/crm-ai-mcp)](https://github.com/CSOAI-ORG/crm-ai-mcp/stargazers)
 
-## Tools
+# ucrmU aiU mcp
 
-| Tool | Description |
-|------|-------------|
-| `lead_scorer` | Score leads (0-100) based on firmographic and behavioral data |
-| `deal_stage_predictor` | Predict deal win probability and estimated close date |
-| `followup_scheduler` | Schedule follow-ups based on priority and engagement strategy |
-| `customer_health_score` | Calculate customer health from usage, support, NPS, and adoption |
-| `churn_predictor` | Predict churn probability with retention playbook recommendations |
+****By MEOK AI Labs** | [meok.ai](https://meok.ai)**
+
+[![npm version](https://img.shields.io/npm/v/@meok-ai/crm-ai-mcp)](https://www.npmjs.com/package/@meok-ai/crm-ai-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
+
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/crm-ai-mcp/issues)
+
+</div>
+
+---
 
 ## Installation
 
 ```bash
-pip install mcp
+pip install crm-ai-mcp
+# or
+npm install -g @meok-ai/crm-ai-mcp
 ```
 
-## Usage
+## Quick Start
 
-### Run the server
+See the project repository for full documentation and examples.
 
-```bash
-python server.py
-```
+## Enterprise Support
 
-### Claude Desktop config
-
-```json
-{
-  "mcpServers": {
-    "crm": {
-      "command": "python",
-      "args": ["/path/to/crm-ai-mcp/server.py"]
-    }
-  }
-}
-```
-
-## Pricing
-
-| Tier | Limit | Price |
-|------|-------|-------|
-| Free | 30 calls/day | $0 |
-| Pro | Unlimited + premium features | $9/mo |
-| Enterprise | Custom + SLA + support | Contact us |
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
 ## License
 
-MIT
+MIT © [CSOAI](https://csoai.org)
