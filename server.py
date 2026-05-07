@@ -543,6 +543,21 @@ def lead_scorer(company_size: int, industry: str, budget: float = 0,
         engagement_signals: Behavioral data as {signal: count} (e.g. {"demo_requested": 1, "email_clicks": 5})
         source: Lead source (referral, organic_search, paid_search, linkedin, etc.)
         days_since_first_touch: Days since first interaction
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -573,6 +588,20 @@ def deal_stage_predictor(deal_value: float, days_in_pipeline: int = 0,
         activities_count: Number of logged activities (calls, emails, meetings)
         competitor_mentioned: Whether a competitor has been mentioned
         champion_identified: Whether an internal champion has been identified
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -595,6 +624,21 @@ def followup_scheduler(contacts: list[dict], strategy: str = "standard", api_key
     Args:
         contacts: List as [{"name": "X", "email": "x@y.com", "last_contact_date": "2026-01-01", "priority": "high", "deal_value": 50000}]
         strategy: Follow-up cadence (aggressive, standard, nurture, reactivation)
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -624,6 +668,21 @@ def customer_health_score(usage_metrics: dict = {}, support_tickets: int = 0,
         contract_value: Annual contract value
         months_as_customer: Customer tenure in months
         feature_adoption_pct: Percentage of features adopted (0-100)
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -655,6 +714,21 @@ def churn_predictor(months_as_customer: int = 12,
         nps_score: Latest NPS score (0-10)
         contract_renewal_days: Days until contract renewal
         competitor_mentions: Times competitor was mentioned in interactions
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
