@@ -14,7 +14,6 @@ Run:     python server.py
 
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import math
@@ -561,7 +560,7 @@ def lead_scorer(company_size: int, industry: str, budget: float = 0,
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     err = _check_rate_limit()
     if err:
@@ -619,7 +618,7 @@ def deal_stage_predictor(deal_value: float, days_in_pipeline: int = 0,
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     err = _check_rate_limit()
     if err:
@@ -656,7 +655,7 @@ def followup_scheduler(contacts: list[dict], strategy: str = "standard", api_key
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     err = _check_rate_limit()
     if err:
@@ -700,7 +699,7 @@ def customer_health_score(usage_metrics: dict = {}, support_tickets: int = 0,
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     err = _check_rate_limit()
     if err:
@@ -760,7 +759,7 @@ def churn_predictor(months_as_customer: int = 12,
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     err = _check_rate_limit()
     if err:
@@ -771,5 +770,8 @@ def churn_predictor(months_as_customer: int = 12,
         return {"error": str(e)}
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,9 @@
+# crm-ai-mcp - Auto-trigger Rules
+
+When the user asks about crm, use crm-ai-mcp tools: lead_scorer, deal_stage_predictor, followup_scheduler, customer_health_score, churn_predictor
+
+**MCP server for crm ai mcp operations**
+
+Install: `pip install crm-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.

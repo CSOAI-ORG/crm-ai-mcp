@@ -1,0 +1,28 @@
+{
+  "name": "crm-ai-mcp",
+  "title": "Crm Ai Mcp",
+  "description": "Crm Ai MCP server. Tools: lead scorer, deal stage predictor, followup scheduler. Built by MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "lead_scorer"
+    },
+    {
+      "name": "deal_stage_predictor"
+    },
+    {
+      "name": "followup_scheduler"
+    },
+    {
+      "name": "customer_health_score"
+    },
+    {
+      "name": "churn_predictor"
+    }
+  ]
+}

@@ -1,32 +1,36 @@
-# Crm Ai MCP
-
-> Customer relationship management toolkit: lead scoring, deal stage prediction, follow-up scheduli...
-
-`crm-ai-mcp` is a Model Context Protocol (MCP) server by MEOK AI Labs.
+# crm-ai-mcp
+# **MCP server for crm ai mcp operations**
 
 ## Install
-
 ```bash
 pip install crm-ai-mcp
 ```
 
-Or run without installing:
-
-```bash
-uvx crm-ai-mcp
-```
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
 
 ## Tools
 
-- `lead_scorer` — Score a sales lead (0-100) based on firmographic data, engagement signals,
-- `deal_stage_predictor` — Predict deal win probability and estimated close date based on
-- `followup_scheduler` — Schedule follow-ups for a list of contacts based on priority,
-- `customer_health_score` — Calculate a customer health score (0-100) from usage, support, NPS,
-- `churn_predictor` — Predict churn probability and recommend a retention playbook based on
+### `lead_scorer`
+Score a sales lead (0-100) based on firmographic data, engagement signals,
 
-## Links
+### `deal_stage_predictor`
+Predict deal win probability and estimated close date based on
 
-- Source: https://github.com/CSOAI-ORG/crm-ai-mcp
-- PyPI: https://pypi.org/project/crm-ai-mcp/
-- MEOK AI Labs: https://meok.ai
-- Council of AI: https://councilof.ai
+### `followup_scheduler`
+Schedule follow-ups for a list of contacts based on priority,
+
+### `customer_health_score`
+Calculate a customer health score (0-100) from usage, support, NPS,
+
+### `churn_predictor`
+Predict churn probability and recommend a retention playbook based on
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.
