@@ -1,0 +1,68 @@
+{
+  "name": "crm-ai-mcp",
+  "description": "Crm Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/crm-ai-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "lead_scorer",
+      "name": "Lead Scorer",
+      "description": "lead_scorer via crm-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "deal_stage_predictor",
+      "name": "Deal Stage Predictor",
+      "description": "deal_stage_predictor via crm-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "followup_scheduler",
+      "name": "Followup Scheduler",
+      "description": "followup_scheduler via crm-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "customer_health_score",
+      "name": "Customer Health Score",
+      "description": "customer_health_score via crm-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "churn_predictor",
+      "name": "Churn Predictor",
+      "description": "churn_predictor via crm-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}

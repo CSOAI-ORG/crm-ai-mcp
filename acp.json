@@ -1,0 +1,23 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "crm-ai-mcp",
+    "description": "Crm Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "crm-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "lead_scorer",
+      "deal_stage_predictor",
+      "followup_scheduler",
+      "customer_health_score",
+      "churn_predictor"
+    ]
+  }
+}
